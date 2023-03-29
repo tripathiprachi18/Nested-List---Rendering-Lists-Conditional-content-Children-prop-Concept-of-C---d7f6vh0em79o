@@ -155,13 +155,13 @@ const states = [
 ];
 
 function App() {
-  const [state,Setstate] = useState();
-  
-  return <div id="main">
-    
-    
-    
-    </div>;
+  const [state, Setstate] = useState();
+
+  return (
+    <div id="main">
+      <h1>Hello</h1>
+    </div>
+  );
 }
 
 export default App;
