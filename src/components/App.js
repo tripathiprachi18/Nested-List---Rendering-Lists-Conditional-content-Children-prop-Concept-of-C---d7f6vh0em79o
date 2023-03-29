@@ -1,6 +1,8 @@
 import React, { Component, useState } from "react";
 import "./../styles/App.css";
 import Province from './Province'
+
+
 // Do not alter the states const and values inside it.
 const states = [
   {
@@ -155,26 +157,22 @@ const states = [
 ];
 
 function App() {
-  const [state,Setstate] = useState(states);
-  
-  return <div id="main">
-    
-    <ul>{
-state.map((item) =>(
-<Province 
-index={state.indexof(item)}
-city={item.cities}
-state={item.name}
-/>
+  const [state, setState] = useState(states)
 
-)
-
-
-)
-
- } </ul>
-    
-    </div>;
+  return (
+  <div id="main">
+  <ul>
+    {
+      state.map(item=>(
+        <Province
+        index={state.indexOf(item)} 
+        name={item.name}
+        cities={item.cities}  />
+      ))
+    }
+    </ul>
+  </div>
+  );
 }
 
 export default App;

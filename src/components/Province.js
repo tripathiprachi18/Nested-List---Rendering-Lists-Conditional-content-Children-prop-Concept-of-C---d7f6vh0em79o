@@ -1,16 +1,28 @@
-import React from 'react'
+import React,{ useState} from 'react'
+import City from './City'
+import './../styles/App.css'
+function Province ({name, cities, index }) {
+    const [clicked, setClicked] = useState(false);
+    function handleClick(){
+        setClicked(!clicked)
+    }
+    
 
-function Province({index,state,city}) {
-  return (
-    <div>
-<li>
-<h2>{state}</h2>
-
-</li>
-
-
-    </div>
-  )
+    return (
+        <li>
+            <h3 id={'state'+(index +1)} onClick={handleClick}>{name}</h3>
+            {/* {console.log(h3)}; */}
+            {clicked ? (
+                <ul>
+                {cities.map(item=>(
+                    <City 
+                    name={item.name} 
+                    towns={item.towns} 
+                    index={cities.indexOf(item)} />
+                ))}
+                </ul>     
+            ):null}
+        </li>
+    )
 }
-
 export default Province
